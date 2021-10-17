@@ -16,7 +16,7 @@ import com.simplilearn.Medicare_App.model.Category;
 import com.simplilearn.Medicare_App.service.CategoryService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("http://localhost:4200")
 @RequestMapping(path = "/category")
 public class CategoryController {
 	

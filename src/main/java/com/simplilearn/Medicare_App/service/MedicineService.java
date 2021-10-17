@@ -27,4 +27,7 @@ public interface MedicineService {
 	
 	public List<Medicine> getActiveMedicine();
 	public List<Medicine> getActiveMedicinesOfCategory(Category category);
+	
+	public List<Medicine> searchByName(String name);
+	
 }

@@ -26,7 +26,7 @@ import com.simplilearn.Medicare_App.service.MedicineService;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("http://localhost:4200")
 @RequestMapping(path = "medicines")
 public class MedicineController {
 
@@ -62,35 +62,44 @@ public class MedicineController {
 
 	@DeleteMapping("/{id}")
 	public Medicine deleteMedicine(@PathVariable("id") Long id) {
-	return this.medicineService.deleteMedicine(id);	
+		return this.medicineService.deleteMedicine(id);	
 	}
-	
-//	@DeleteMapping("/{name}")
-//	public void deleteMedicine(@PathVariable("name") String name) {
-//		this.medicineService.deleteByName(name);	
-//	}
-	
+
+	//	@DeleteMapping("/{name}")
+	//	public void deleteMedicine(@PathVariable("name") String name) {
+	//		this.medicineService.deleteByName(name);	
+	//	}
+
 	@GetMapping("/category/{cid}")
 	public List<Medicine> getMedicinesOfCategory(@PathVariable("cid") Long cid){
-		
+
 		Category category = new Category();
 		category.setCid(cid);
 		return this.medicineService.MedicinesOfCategory(category);
-		
+
 	}
-	
+
 	@GetMapping("/active")
 	public List<Medicine> getActiveMedicines(){	
 		return this.medicineService.getActiveMedicine();	
 	}
-	
+
 	@GetMapping("/category/active/{cid}")
 	public List<Medicine> getActiveMedicinesOfCategory(@PathVariable("cid") Long cid){
-		
+
 		Category category = new Category();
 		category.setCid(cid);
 		return this.medicineService.getActiveMedicinesOfCategory(category);
-		
+
+	}
+
+
+
+
+
+	@GetMapping("/active/{name}")
+	public List<Medicine> searchByName(@PathVariable("name") String name){
+		return this.medicineService.searchByName(name);        
 	}
 
 
@@ -112,26 +121,20 @@ public class MedicineController {
 
 
 
+	//	@PostMapping("/upload")
+	//	public void uploadImage(@RequestParam("imageFile") MultipartFile file) throws IOException {
+	//		this.bytes = file.getBytes();
+	//	}
 
-
-
-
-
-
-		//	@PostMapping("/upload")
-		//	public void uploadImage(@RequestParam("imageFile") MultipartFile file) throws IOException {
-		//		this.bytes = file.getBytes();
-		//	}
-
-		//	@PostMapping("/add")
-		//	public void addMedicine(@RequestBody Medicine medicine) throws IOException {
-		//		medicine.setPicByte(this.bytes);
-		//		medicineRepository.save(medicine);
-		//		this.bytes = null;
-		//	}
-		//	@CrossOrigin(origins = "http://localhost:4200",methods = RequestMethod.POST)
-		//	@PostMapping("/medicines")
-		//	public Medicine addMedicine(@RequestBody Medicine medicine) {
-		//		return medicineRepository.save(medicine);
-		//	}
-	}
+	//	@PostMapping("/add")
+	//	public void addMedicine(@RequestBody Medicine medicine) throws IOException {
+	//		medicine.setPicByte(this.bytes);
+	//		medicineRepository.save(medicine);
+	//		this.bytes = null;
+	//	}
+	//	@CrossOrigin(origins = "http://localhost:4200",methods = RequestMethod.POST)
+	//	@PostMapping("/medicines")
+	//	public Medicine addMedicine(@RequestBody Medicine medicine) {
+	//		return medicineRepository.save(medicine);
+	//	}
+}

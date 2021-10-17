@@ -33,32 +33,32 @@ public class MedicareAppApplication implements CommandLineRunner{
 
 		//Selenium testing
 
-		System.setProperty("webdriver.chrome.driver", "C:\\Software\\Selenium\\geckodriver\\chromedriver.exe");
-
-		WebDriver driver = new ChromeDriver();
-
-		String baseUrl = "http://localhost:4200/";
-		String expectedTitle="MedicareFrontend";
-		String actualTitle="";
-		String tagName="";
-
-		driver.get(baseUrl);
-		actualTitle = driver.getTitle();
-
-		//1. Testing Project Title
-
-		if (actualTitle.contentEquals(expectedTitle)) {
-			System.out.println("test passed!!");
-		}else 
-			System.out.println("test failed :(");
-
-
-		//2. Testing navbar locator
-
-		tagName = driver.findElement(By.id("navbar")).getTagName();
-		System.out.println("2."+driver.findElement(By.id("navbar")).getTagName());
-
-		//3. testing login page
+//		System.setProperty("webdriver.chrome.driver", "C:\\Software\\Selenium\\geckodriver\\chromedriver.exe");
+//
+//		WebDriver driver = new ChromeDriver();
+//
+//		String baseUrl = "http://localhost:4200/";
+//		String expectedTitle="MedicareFrontend";
+//		String actualTitle="";
+//		String tagName="";
+//
+//		driver.get(baseUrl);
+//		actualTitle = driver.getTitle();
+//
+//		//1. Testing Project Title
+//
+//		if (actualTitle.contentEquals(expectedTitle)) {
+//			System.out.println("test passed!!");
+//		}else 
+//			System.out.println("test failed :(");
+//
+//
+//		//2. Testing navbar locator
+//
+//		tagName = driver.findElement(By.id("navbar")).getTagName();
+//		System.out.println("2."+driver.findElement(By.id("navbar")).getTagName());
+//
+//		//3. testing login page
 		
 //		System.out.println("3."+driver.findElement(By.("a")).getTagName());
 

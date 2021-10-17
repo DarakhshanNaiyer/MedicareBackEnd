@@ -26,7 +26,7 @@ import com.simplilearn.Medicare_App.model.UserRole;
 import com.simplilearn.Medicare_App.service.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("http://localhost:4200")
 @RequestMapping(path = "/user")
 public class UserController {
 	
@@ -36,8 +36,11 @@ public class UserController {
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
-	
-	
+	@GetMapping("/test")
+    public String test() {
+        return "Welcome to Medicare";
+    }
+		
 	@PostMapping("/")
 	public User createUser(@RequestBody User user) throws Exception {
 		

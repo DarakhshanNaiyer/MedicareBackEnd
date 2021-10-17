@@ -24,7 +24,7 @@ import com.simplilearn.Medicare_App.model.User;
 import com.simplilearn.Medicare_App.service.impl.UserDetailsServiceImpl;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("http://localhost:4200")
 public class AuthenticateController {
 
 	@Autowired

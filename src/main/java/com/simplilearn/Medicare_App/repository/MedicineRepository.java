@@ -18,6 +18,7 @@ public interface MedicineRepository extends JpaRepository<Medicine,Long>{
 	
 	public List<Medicine> findByActive(Boolean b);
 	public List<Medicine> findByCategoryAndActive(Category category, Boolean b);
-
+ 
+	public List<Medicine> findByNameAndActive(String name, Boolean b);
 
 }

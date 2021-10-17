@@ -70,6 +70,10 @@ public class MedicineServiceImpl implements MedicineService{
 		return this.medicineRepository.findByCategoryAndActive(category, true);
 	}
 	
-
+	@Override
+    public List<Medicine> searchByName(String name) {
+        // TODO Auto-generated method stub
+        return this.medicineRepository.findByNameAndActive(name, true);
+    }
 
 }
